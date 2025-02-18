@@ -76,8 +76,12 @@ img {
 }
 
 /* تصميم متجاوب للشاشات الصغيرة */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
     .all {
         flex-direction: column;
     }
 }
+@media (max-width: 1440px) {
+    .all {
+        flex-direction: column;
+    }}
