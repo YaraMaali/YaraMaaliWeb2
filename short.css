@@ -1,0 +1,103 @@
+body {
+    background-color: rgb(126, 191, 252);
+    text-align: center;
+    
+ }
+ h4{
+    text-align: left;
+    display: flex;
+    color: white;
+}
+ nav{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    text-align: right ;
+    margin-left: 70px;
+    li{
+        display: inline;
+        margin: 20px;
+    }  
+}
+ .buttonNav,.al{
+    color: white;
+    text-decoration: none;
+    background-color:rgb(100, 163, 206);
+    padding: 5px 10px;
+    border-radius: 5px;
+   margin: 20px;
+ }
+ .al:hover{
+    background-color:rgb(126, 191, 252) ;
+ }
+.Main{
+    color: white;
+    background-color: rgb(100, 163, 206);
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    font-size:large;
+
+a{
+    color:white;
+    text-decoration: none;
+}
+#timer{
+   font-size: 150px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#startButton{
+    padding: 20px;
+    width:200px;
+    color: rgb(100, 163, 206);
+    border: none;
+    border-radius: 15px;
+    font-size: larger;
+    }
+}
+.t{
+    color: white;
+}
+.ta{
+    color: white;
+
+}
+.h{
+    width: 35%;
+}
+
+
+input{
+    background-color: rgb(127, 170, 196);
+    color: white;
+    border-radius: 10px;
+    width: 650px;
+    height: 60px;
+    text-align: center;
+    padding: 5px;
+    font-size: medium;
+    border:1px dashed white;
+}
+
+@media (max-width: 600px) {
+    header {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    
+    .button {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+ @media (max-width: 375px) {
+    .body{
+        flex-direction: column;
+    }
+}
+@media (max-width: 1440px) {
+    .body {
+        flex-direction:column;
+    }}

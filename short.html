@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomp</title>
+    <link href="short.css"rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <h4>Pomofocus</h4>
+            <ul >
+                <li><a href="#" class="buttonNav">Report</li></a>
+                <li><a href="#"class="buttonNav">Setting</li></a>
+                <li><a href="#"class="buttonNav">Sign In</li></a>
+                <li><a href="#"class="buttonNav">:</li></a>
+            </ul>
+        </nav>
+    </header>
+   <hr>
+   <main class="Main">
+    <nav >
+        <ul >
+            <li><a class="al" href="#" >Pomofocus</li></a>
+            <li><a class="al" href="short.html">Short Break</li></a>
+            <li><a class="al" href="Long.html">Long Break</li></a>
+        </ul>
+    </nav>
+    <div id="timer">5:00</div>
+    <button id="startButton">START</button>
+    <script>
+        let isRunning = false;
+        let minutes = 5;
+        let seconds = 0;
+        let timerInterval;
+
+        const timerDisplay = document.getElementById('timer');
+        const startButton = document.getElementById('startButton');
+
+        function startTimer() {
+            timerInterval = setInterval(function() {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(timerInterval);
+                        alert("PAUSE");
+                        minutes = 5; 
+                        seconds = 0;
+                        updateTimerDisplay();
+                        return;
+                    } else {
+                        minutes--;
+                        seconds = 59;
+                    }
+                } else {
+                    seconds--;
+                }
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        startButton.addEventListener('click', function() {
+            if (!isRunning) {
+                isRunning = true;
+                startButton.textContent = 'PAUSE';
+                startTimer();
+            } else {
+                isRunning = false;
+                startButton.textContent='START';
+                clearInterval(timerInterval);
+            }
+   
+        });
+    </script>
+   </main>
+    <div>
+        <p class="t">Time to focus!</p>
+        <span class="ta">Tasks</span>
+        <button>:</button>
+        <hr class="h">
+        <input placeholder=" + Add Task">
+    </div>
+    
+</body>
+</html>
